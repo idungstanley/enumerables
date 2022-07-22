@@ -13,21 +13,15 @@ class MyList
 end
 
 # Create our list
-irb> list = MyList.new(1, 2, 3, 4)
-=> #<MyList: @list=[1, 2, 3, 4]>
+list = MyList.new(1, 2, 3, 4)
 
 # Test #all?
-irb> list.all? {|e| e < 5}
-=> true
-irb> list.all? {|e| e > 5}
-=> false
+puts(list.all? { |e| e < 5 })
+p(list.all? { |e| e > 5 })
 
 # Test #any?
-irb> list.any? {|e| e == 2}
-=> true
-irb> list.any? {|e| e == 5}
-=> false
+puts(list.any? { |e| e == 2 })
+p(list.any? { |e| e == 5 })
 
-# Test #filter
-irb> list.filter {|e| e.even?}
-=> [2, 4]
+# Test filter method
+p(list.filter(&:even?))
