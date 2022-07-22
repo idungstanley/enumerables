@@ -8,6 +8,7 @@ module MyEnumerable
 
   def any?
     return true unless block_given?
+
     each { |n| return true if yield(n) }
     false
   end
